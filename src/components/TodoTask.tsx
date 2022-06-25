@@ -5,7 +5,7 @@ interface Props {
   task: ITask;
 }
 const TodoTask = ({ task }: Props) => {
-  return <div>task</div>;
+  return <div>{task.taskName}</div>;
 };
 
 export default TodoTask;
