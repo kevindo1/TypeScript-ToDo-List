@@ -13,11 +13,12 @@ const App: FC = () => {
     } else {
       setDeadline(Number(event.target.value));
     }
-    setTask(event.target.value);
   };
 
   const addTask = (): void => {
-    setTodoList([...todoList], task);
+    const newTask = { taskName: task, deadline: deadline };
+    setTodoList([...todoList, newTask]);
+    console.log(todoList);
   };
 
   return (
