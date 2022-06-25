@@ -4,15 +4,22 @@ import "../App.css";
 
 interface Props {
   task: ITask;
+  deleteTask(taskNameToDelete: string): void;
 }
-const TodoTask = ({ task }: Props) => {
+const TodoTask = ({ task, deleteTask }: Props) => {
   return (
     <div className="task">
       <div className="content">
         <span>{task.taskName}</span>
         <span>{task.deadline}</span>
       </div>
-      <button>Delete</button>
+      <button
+        onClick={() => {
+          deleteTask(task.taskName);
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 };
